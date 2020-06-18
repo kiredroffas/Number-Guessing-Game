@@ -6,9 +6,8 @@ namespace NumberGuesser
     // Main Class
     class Program
     {
-        // Entry point method
-        static void Main(string[] args)
-        {
+        // Get and display app info
+        static void GetAppInfo() {
             // Set app vars
             string appName = "Number Guesser";
             string appVersion = "1.0.0";
@@ -22,7 +21,10 @@ namespace NumberGuesser
 
             // Reset text color
             Console.ResetColor();
+        }
 
+        // Ask user's name and greet
+        static void GreetUser() {
             // Ask users name
             Console.WriteLine("What is your name?");
 
@@ -30,11 +32,30 @@ namespace NumberGuesser
             string inputName = Console.ReadLine();
 
             Console.WriteLine("Hello " + inputName + ", let's play a game...");
+        }
+
+        // Print color message
+        static void PrintColorMessage(ConsoleColor color, string message) {
+            // Change text color
+            Console.ForegroundColor = color;
+
+            // Tell user the message
+            Console.WriteLine(message);
+
+            // Reset text color
+            Console.ResetColor();
+        }
+
+        // Entry point method
+        static void Main(string[] args)
+        {
+            // Run GetAppInfo() function to get info
+            GetAppInfo();
+
+            // Ask for user's name and greet
+            GreetUser();
 
             while(true) {
-                // Set correct number
-                //int correctNumber = 7;
-
                 // Create a new Random object
                 Random random = new Random();
                 // Get a random number
@@ -55,14 +76,8 @@ namespace NumberGuesser
                     // Make sure its a number
                     if (!int.TryParse(input, out guess))
                     {
-                        // Change text color
-                        Console.ForegroundColor = ConsoleColor.Red;
-
-                        // Tell user its nor a number
-                        Console.WriteLine("Please enter an actual number");
-
-                        // Reset text color
-                        Console.ResetColor();
+                        // Print error message
+                        PrintColorMessage(ConsoleColor.Red, "Please use an actual number");
 
                         // Start over logic in while loop
                         continue;
@@ -74,26 +89,13 @@ namespace NumberGuesser
                     // Match guess to correct number
                     if (guess != correctNumber)
                     {
-                        // Change text color
-                        Console.ForegroundColor = ConsoleColor.Red;
-
-                        // Write out wrong number message
-                        Console.WriteLine("Wrong number, please try again");
-
-                        // Reset text color
-                        Console.ResetColor();
+                        // Print error message
+                        PrintColorMessage(ConsoleColor.Red, "Wrong number, please try again");
                     }
                 }
 
                 // Output success message
-                // Change text color
-                Console.ForegroundColor = ConsoleColor.Yellow;
-
-                // Write out right number message
-                Console.WriteLine("You are CORRECT!!!");
-
-                // Reset text color
-                Console.ResetColor();
+                PrintColorMessage(ConsoleColor.Green, "CORRECT!!! You guessed it!");
 
                 // Ask to play again
                 Console.WriteLine("Play Again? [Y or N]");
@@ -101,12 +103,15 @@ namespace NumberGuesser
                 // Get answer
                 string answer = Console.ReadLine().ToUpper();
 
+                // If yes continue while loop
                 if(answer == "Y") {
                     continue;
                 }
+                // Else if no return and exit
                 else if(answer == "N") {
                     return;
                 }
+                // Else if anything else is typed output message, return and exit
                 else {
                     Console.WriteLine("Thats not a Y or N... Bye!");
                     return;
