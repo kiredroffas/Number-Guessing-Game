@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 
 // Namespace
 namespace NumberGuesser
@@ -9,8 +10,13 @@ namespace NumberGuesser
         // Entry point method
         static void Main(string[] args)
         {
-            // Start here
-            Console.WriteLine("Hello world");
+            string name = "Erik";
+            int age = 23;
+
+            // Ways to print
+            Console.WriteLine(name + " is " + age);
+            Console.WriteLine("{0} is {1}", name, age);
+            Console.WriteLine($"{name} is {age}");
         }
     }
 }
