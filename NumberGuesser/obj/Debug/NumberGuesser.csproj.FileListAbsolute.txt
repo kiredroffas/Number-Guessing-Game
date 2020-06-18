@@ -1,0 +1,7 @@
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\bin\Debug\NumberGuesser.exe.config
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\bin\Debug\NumberGuesser.exe
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\bin\Debug\NumberGuesser.pdb
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\obj\Debug\NumberGuesser.csprojAssemblyReference.cache
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\obj\Debug\NumberGuesser.csproj.CoreCompileInputs.cache
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\obj\Debug\NumberGuesser.exe
+C:\Users\kired\source\repos\Number-Guessing-Game\NumberGuesser\obj\Debug\NumberGuesser.pdb
