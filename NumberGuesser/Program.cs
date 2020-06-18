@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Principal;
 
 // Namespace
 namespace NumberGuesser
@@ -10,13 +9,19 @@ namespace NumberGuesser
         // Entry point method
         static void Main(string[] args)
         {
-            string name = "Erik";
-            int age = 23;
+            // Set app vars
+            string appName = "Number Guesser";
+            string appVersion = "1.0.0";
+            string appAuthor = "Erik";
 
-            // Ways to print
-            Console.WriteLine(name + " is " + age);
-            Console.WriteLine("{0} is {1}", name, age);
-            Console.WriteLine($"{name} is {age}");
+            // Change text color
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            // Write out app info
+            Console.WriteLine(appName + ": Version " + appVersion + " by " + appAuthor);
+
+            // Reset text color
+            Console.ResetColor();
         }
     }
 }
